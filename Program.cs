@@ -50,6 +50,7 @@ Si richiede di creare un sistema di controllo in grado di riportare lo stato del
 // 1.Rapido     2gettoni, 30min
 // 2.Intenso    3gettoni, 60min
 
+Lavanderia lavanderia = new Lavanderia();
 Lavatrice lavatrice1 = new Lavatrice("samsung");
 Asciugatrici asciugatrie1 = new Asciugatrici("indesit");
 
@@ -63,6 +64,27 @@ for(int i = 0; i < 10; i++)
 {
     asciugatrie1.Rapido();
     asciugatrie1.StampaAsciugatrice();
+}
+
+
+
+public class Lavanderia
+{
+    public Lavatrice[] lavatrici;
+    public Asciugatrici[] asciugatrici;
+
+    public Lavanderia()
+    {
+        lavatrici = new Lavatrice[5];
+        asciugatrici = new Asciugatrici[5];
+
+        for(int i = 0; i < 5; i++)
+        {
+            lavatrici[i] = new Lavatrice("samsung" + (i + 1));
+            asciugatrici[i] = new Asciugatrici("indesit" + (i + 1));
+        }
+    }
+
 }
 
 
