@@ -50,7 +50,9 @@ Si richiede di creare un sistema di controllo in grado di riportare lo stato del
 // 1.Rapido     2gettoni, 30min
 // 2.Intenso    3gettoni, 60min
 
+Lavatrice lavatrice1 = new Lavatrice("samsung");
 
+lavatrice1.StampaLavatrice();
 
 
 public class Lavatrice
@@ -99,6 +101,28 @@ public class Lavatrice
         Ammorbidente -= 15;
     }
     
+    public string StatoLavatrice()
+    {
+        if(Stato != "vuota")
+        {
+            Random rnd = new Random();
+            int tempoAttuale = rnd.Next(1, 5);
+            if(tempoAttuale == 1 || Tempo == 0)
+            {
+                Tempo = 0;
+                Stato = "vuota";
+            }
+            else
+            {
+                Tempo = rnd.Next(1, Tempo + 1);
+            }
+        }
+        return Stato;
+    }
 
+    public void StampaLavatrice()
+    {
+        Console.WriteLine("Nome: {0}", Nome);
+    }
     
 }
