@@ -52,7 +52,12 @@ Si richiede di creare un sistema di controllo in grado di riportare lo stato del
 
 Lavatrice lavatrice1 = new Lavatrice("samsung");
 
-lavatrice1.StampaLavatrice();
+for(int i = 0; i < 20; i++)
+{
+    lavatrice1.Rinnovante();
+    lavatrice1.StampaLavatrice();
+}
+
 
 
 public class Lavatrice
@@ -63,6 +68,7 @@ public class Lavatrice
     public int Detersivo { get; set; }
     public int Ammorbidente { get; set; }
     public string Stato { get; set; }
+    public double Incasso { get; private set; }
 
     public Lavatrice(string nome)
     {
@@ -106,15 +112,15 @@ public class Lavatrice
         if(Stato != "vuota")
         {
             Random rnd = new Random();
-            int tempoAttuale = rnd.Next(1, 5);
+            int tempoAttuale = rnd.Next(1, 4);
             if(tempoAttuale == 1 || Tempo == 0)
             {
-                Tempo = 0;
                 Stato = "vuota";
+                Tempo = 0;
             }
             else
             {
-                Tempo = rnd.Next(1, Tempo + 1);
+                Tempo = rnd.Next(0, Tempo);
             }
         }
         return Stato;
@@ -123,6 +129,52 @@ public class Lavatrice
     public void StampaLavatrice()
     {
         Console.WriteLine("Nome: {0}", Nome);
+        Console.WriteLine("Gettoni: {0}", Gettoni);
+        Console.WriteLine("Incasso Lavatrici: {0}", IncassoLavatrici());
+        Console.WriteLine("Stato: {0}", StatoLavatrice());
+        Console.WriteLine("Tempo: {0}", Tempo);
+        Console.WriteLine("Detersivo: {0}", Detersivo);
+        Console.WriteLine("Ammorbidente: {0}", Ammorbidente);
+        Console.WriteLine("----------------------------");
+    }
+
+    public double IncassoLavatrici()
+    {
+
+        double mioIncasso = (double)Gettoni * 0.50;
+
+        return Incasso = mioIncasso;
     }
     
+}
+
+public class Asciugatrici
+{
+    public string Nome { get; set; }
+    public int Tempo { get; set; }
+    public string Stato { get; set; }
+    public int Gettoni { get; set; }
+
+    public Asciugatrici(string nome)
+    {
+        Nome = nome;
+        Tempo = 0;
+        Stato = "vuota";
+        Gettoni = 0;
+    }
+    
+    public void Rapido()
+    {
+        Tempo = 30;
+        Stato = "Rapido in esecuzione";
+        Gettoni += 2;
+    }
+
+    public void Intenso()
+    {
+        Tempo = 60;
+        Stato = "Intenso in esecuzione";
+        Gettoni += 4;
+    }
+
 }
