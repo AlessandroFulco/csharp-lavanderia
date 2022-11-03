@@ -51,11 +51,18 @@ Si richiede di creare un sistema di controllo in grado di riportare lo stato del
 // 2.Intenso    3gettoni, 60min
 
 Lavatrice lavatrice1 = new Lavatrice("samsung");
+Asciugatrici asciugatrie1 = new Asciugatrici("indesit");
 
-for(int i = 0; i < 20; i++)
+for(int i = 0; i < 10; i++)
 {
     lavatrice1.Rinnovante();
     lavatrice1.StampaLavatrice();
+}
+
+for(int i = 0; i < 10; i++)
+{
+    asciugatrie1.Rapido();
+    asciugatrie1.StampaAsciugatrice();
 }
 
 
@@ -130,7 +137,7 @@ public class Lavatrice
     {
         Console.WriteLine("Nome: {0}", Nome);
         Console.WriteLine("Gettoni: {0}", Gettoni);
-        Console.WriteLine("Incasso Lavatrici: {0}", IncassoLavatrici());
+        Console.WriteLine("Incasso Lavatrici: {0} euro", IncassoLavatrici());
         Console.WriteLine("Stato: {0}", StatoLavatrice());
         Console.WriteLine("Tempo: {0}", Tempo);
         Console.WriteLine("Detersivo: {0}", Detersivo);
@@ -154,7 +161,7 @@ public class Asciugatrici
     public int Tempo { get; set; }
     public string Stato { get; set; }
     public int Gettoni { get; set; }
-
+    public double Incasso { get; private set; }
     public Asciugatrici(string nome)
     {
         Nome = nome;
@@ -175,6 +182,43 @@ public class Asciugatrici
         Tempo = 60;
         Stato = "Intenso in esecuzione";
         Gettoni += 4;
+    }
+
+    public string StatoAsciugatrice()
+    {
+        if (Stato != "vuota")
+        {
+            Random rnd = new Random();
+            int tempoAttuale = rnd.Next(1, 4);
+            if (tempoAttuale == 1 || Tempo == 0)
+            {
+                Stato = "vuota";
+                Tempo = 0;
+            }
+            else
+            {
+                Tempo = rnd.Next(0, Tempo);
+            }
+        }
+        return Stato;
+    }
+
+    public void StampaAsciugatrice()
+    {
+        Console.WriteLine("Nome: {0}", Nome);
+        Console.WriteLine("Gettoni: {0}", Gettoni);
+        Console.WriteLine("Incasso Lavatrici: {0} euro", IncassoAsciugatrici());
+        Console.WriteLine("Stato: {0}", StatoAsciugatrice());
+        Console.WriteLine("Tempo: {0}", Tempo);
+        Console.WriteLine("----------------------------");
+    }
+
+    public double IncassoAsciugatrici()
+    {
+
+        double mioIncasso = Math.Round((double)Gettoni * 0.50, 2);
+
+        return Incasso = mioIncasso;
     }
 
 }
