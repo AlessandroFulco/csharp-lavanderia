@@ -81,6 +81,23 @@ public class Lavatrice
         Ammorbidente -= 5;
     }
 
+    public void Rinnovante()
+    {
+        Stato = "Rinnovante in esecuzione";
+        Tempo = 40;
+        Gettoni += 3;
+        Detersivo -= 40;
+        Ammorbidente -= 10;
+    }
+
+    public void Sgrassante()
+    {
+        Stato = "Sgrassante in esecuzione";
+        Tempo = 60;
+        Gettoni += 4;
+        Detersivo -= 60;
+        Ammorbidente -= 15;
+    }
     
 
     
