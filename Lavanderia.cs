@@ -25,24 +25,34 @@
 //Programmi
 
 
-public class Lavanderia
-{
-    public List<Macchina> Lista { get; set; }
+//public class Lavanderia
+//{
+//    public List<Macchina> Lista { get; set; }
 
-    public Lavanderia()
-    {
-        Lista = new List<Macchina>();
-        Lista.Add(new Lavatrice("Samsung"));
-        Lista.Add(new Lavatrice("Indesit"));
-        Lista.Add(new Lavatrice("Bosh"));
-        Lista.Add(new Lavatrice("Beko"));
-        Lista.Add(new Lavatrice("Lg"));
-        Lista.Add(new Asciugatrice("Lg"));
-        Lista.Add(new Asciugatrice("Solarex"));
-        Lista.Add(new Asciugatrice("Bosch"));
-        Lista.Add(new Asciugatrice("Siemens"));
-        Lista.Add(new Asciugatrice("Electrolux"));
-    }
-}
+//    public Lavanderia()
+//    {
+//        Lista = new List<Macchina>();
+//        Lista.Add(new Lavatrice("Samsung"));
+//        Lista.Add(new Lavatrice("Indesit"));
+//        Lista.Add(new Lavatrice("Bosh"));
+//        Lista.Add(new Lavatrice("Beko"));
+//        Lista.Add(new Lavatrice("Lg"));
+//        Lista.Add(new Asciugatrice("Lg"));
+//        Lista.Add(new Asciugatrice("Solarex"));
+//        Lista.Add(new Asciugatrice("Bosch"));
+//        Lista.Add(new Asciugatrice("Siemens"));
+//        Lista.Add(new Asciugatrice("Electrolux"));
+//    }
 
+//    public List<Macchina> StatoMacchine()
+//    {
+//        List<Macchina> lista = new List<Macchina>();
 
+//        foreach (Macchina macchina in Lista)
+//        {
+//            lista.Add(macchina);
+//        }
+
+//        return lista;
+//    }
+//}

@@ -26,15 +26,25 @@
 
 public class Asciugatrice : Macchina
 {
-    public Programma ProgrammaCorrente { get; set; }
     public List<ProgrammaAsciugatrice> Programmi { get; set; }
 
     public Asciugatrice(string marchio)
     {
         Marchio = marchio;
+        RaccoglitoreGettoni = 0;
+
         Programmi = new List<ProgrammaAsciugatrice>();
         Programmi.Add(new ProgrammaAsciugatrice("Rapido", 30, 2));
         Programmi.Add(new ProgrammaAsciugatrice("Intenso", 60, 4));
+
+        Random random = new Random();
+        ProgrammaCorrente = Programmi[SceltaProgramma(0, Programmi.Count)];
+    }
+
+    public override string ToString()
+    {
+        return base.ToString();
+               
     }
 }
 

@@ -30,23 +30,33 @@ public class Lavatrice : Macchina
 
     public int SerbatoioDetersivo { get; set; }
     public int SerbatoioAmmorbidente { get; set; }
-    public Programma ProgrammaCorrente { get; set; }
     public List<ProgrammaLavatrice> Programmi { get; set; }
 
     public Lavatrice(string marchio)
     {
         Marchio = marchio;
+        SerbatoioDetersivo = 1000;
+        SerbatoioAmmorbidente = 500;
+        RaccoglitoreGettoni = 0;
+
         Programmi = new List<ProgrammaLavatrice>();
         Programmi.Add(new ProgrammaLavatrice("Rinfrescante", 20, 2, 20, 5));
-        Programmi.Add(new ProgrammaLavatrice("Rinnvante", 40, 3, 40, 10));
+        Programmi.Add(new ProgrammaLavatrice("Rinnovante", 40, 3, 40, 10));
         Programmi.Add(new ProgrammaLavatrice("Rinfrescante", 60, 4, 60, 15));
+
+        Random random = new Random();
+        ProgrammaCorrente = Programmi[SceltaProgramma(0, Programmi.Count)];
+        
     }
+
 
 
 
     public override string ToString()
     {
-        return "Marchio: " + Marchio;
+        return base.ToString() +
+                "Detersivo rimasto: " + SerbatoioDetersivo +
+                ", ammorbidente rimasto " + SerbatoioAmmorbidente;
     }
 }
 

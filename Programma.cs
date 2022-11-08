@@ -36,4 +36,11 @@ public abstract class Programma
     public string Nome { get; set; }
     public int Costo { get; set; }
     public int Durata { get; set; }
+    
+
+    public override string ToString()
+    {
+        return  "Nome Programma: " + Nome +
+                ", durata lavaggio: " + Durata;
+    }
 }

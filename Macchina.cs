@@ -29,7 +29,48 @@
 public abstract class Macchina
 {
     public string Marchio { get; set; }
-    public int RaccogliGettoni { get; set; }
+    public bool Stato { get; set; }
+    public string StampaStato { get; set; }
+    public int RaccoglitoreGettoni { get; set; }
+    public int TempoRestante { get; set; }
+    public Programma ProgrammaCorrente { get; set; }
+
+    public int SceltaProgramma(int min, int max)
+    {
+        Random random = new Random();
+        int scelta = random.Next(min, max);
+
+        return scelta;
+    }
+
+    public string StatoMacchina(Macchina macchina)
+    {
+        
+        string stato = macchina.ToString();
+
+        return stato;
+    }
+
+    public int CalcoloTempoRestante()
+    {
+        Random random = new Random();
+        TempoRestante = ProgrammaCorrente.Durata - random.Next(0, ProgrammaCorrente.Durata);
+
+        return TempoRestante;
+    }
+
+    public override string ToString()
+    {
+        if (Stato == false)
+            StampaStato = "Ferma";
+        else
+            StampaStato = "In esecuzione";
+
+        return  "Marchio: " + Marchio +
+                ", stato: " + StampaStato +
+                ", Gettoni incassati: " + RaccoglitoreGettoni + 
+                ", " + ProgrammaCorrente + "\t";
+    }
 }
 
 
