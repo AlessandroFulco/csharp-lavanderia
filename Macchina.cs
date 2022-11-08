@@ -52,6 +52,7 @@ public abstract class Macchina
             StampaStato = "Ferma";
         else
             StampaStato = "In esecuzione";
+        TempoRestante = CalcoloTempoRestante();
         string stato = macchina.ToString();
 
         return stato;
@@ -95,7 +96,8 @@ public abstract class Macchina
         return  "Marchio: " + Marchio +
                 ", stato: " + StampaStato +
                 ", Gettoni incassati: " + RaccoglitoreGettoni + 
-                ", " + ProgrammaCorrente + "\t";
+                ", " + ProgrammaCorrente +
+                ", tempo restante: " + TempoRestante + " minuti";
     }
 }
 

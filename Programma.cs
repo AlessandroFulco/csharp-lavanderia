@@ -40,7 +40,7 @@ public abstract class Programma
 
     public override string ToString()
     {
-        return  "Nome Programma: " + Nome +
+        return  " Nome Programma: " + Nome +
                 ", durata lavaggio: " + Durata;
     }
 }

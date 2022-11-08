@@ -61,7 +61,7 @@ public class Lavatrice : Macchina
     public override string ToString()
     {
         return base.ToString() +
-                "Detersivo rimasto: " + SerbatoioDetersivo +
+                " Detersivo rimasto: " + SerbatoioDetersivo +
                 ", ammorbidente rimasto " + SerbatoioAmmorbidente;
     }
 }
