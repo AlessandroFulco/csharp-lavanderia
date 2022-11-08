@@ -25,34 +25,54 @@
 //Programmi
 
 
-//public class Lavanderia
-//{
-//    public List<Macchina> Lista { get; set; }
+public class Lavanderia
+{
+    public double Incasso { get; private set; }
+    public List<Macchina> Lista { get; set; }
 
-//    public Lavanderia()
-//    {
-//        Lista = new List<Macchina>();
-//        Lista.Add(new Lavatrice("Samsung"));
-//        Lista.Add(new Lavatrice("Indesit"));
-//        Lista.Add(new Lavatrice("Bosh"));
-//        Lista.Add(new Lavatrice("Beko"));
-//        Lista.Add(new Lavatrice("Lg"));
-//        Lista.Add(new Asciugatrice("Lg"));
-//        Lista.Add(new Asciugatrice("Solarex"));
-//        Lista.Add(new Asciugatrice("Bosch"));
-//        Lista.Add(new Asciugatrice("Siemens"));
-//        Lista.Add(new Asciugatrice("Electrolux"));
-//    }
+    public Lavanderia()
+    {
+        Lista = new List<Macchina>();
+        Lista.Add(new Lavatrice("Samsung"));
+        Lista.Add(new Lavatrice("Indesit"));
+        Lista.Add(new Lavatrice("Bosh"));
+        Lista.Add(new Lavatrice("Beko"));
+        Lista.Add(new Lavatrice("Lg"));
+        Lista.Add(new Asciugatrice("Lg"));
+        Lista.Add(new Asciugatrice("Solarex"));
+        Lista.Add(new Asciugatrice("Bosch"));
+        Lista.Add(new Asciugatrice("Siemens"));
+        Lista.Add(new Asciugatrice("Electrolux"));
+    }
 
-//    public List<Macchina> StatoMacchine()
-//    {
-//        List<Macchina> lista = new List<Macchina>();
+    public List<Macchina> StatoMacchine()
+    {
+        List<Macchina> lista = new List<Macchina>();
 
-//        foreach (Macchina macchina in Lista)
-//        {
-//            lista.Add(macchina);
-//        }
+        foreach (Macchina macchina in Lista)
+        {
+            lista.Add(macchina);
+        }
 
-//        return lista;
-//    }
-//}
+        return lista;
+    }
+
+    public string StatoMacchina(int index)
+    {
+        List<Macchina> ListaMacchine = Lista;
+        Macchina macchina = ListaMacchine[index - 1];
+        string statoMacchina = macchina.StatoMacchina(macchina);
+        return statoMacchina;
+    }
+
+    public double TotaleIncasso()
+    {
+        foreach (Macchina macchina in Lista)
+        {
+            Incasso += macchina.IncassoMacchina();
+        }
+        return Incasso;
+    }
+
+}
+

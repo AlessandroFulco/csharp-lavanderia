@@ -33,6 +33,7 @@ public abstract class Macchina
     public string StampaStato { get; set; }
     public int RaccoglitoreGettoni { get; set; }
     public int TempoRestante { get; set; }
+    public double Incasso { get; set; }
     public Programma ProgrammaCorrente { get; set; }
 
     
@@ -76,6 +77,13 @@ public abstract class Macchina
 
         return TempoRestante;
     }
+
+
+    public double IncassoMacchina()
+    {
+        return Incasso = RaccoglitoreGettoni * 0.50;
+    }
+
 
     public override string ToString()
     {
