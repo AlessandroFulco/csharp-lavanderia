@@ -28,10 +28,15 @@
 // Rapido           
 // Intenso
 
-Console.WriteLine("Benvenuto nella lavanderia");
 
 
-Lavatrice lavatrice1 = new Lavatrice("Samsung");
 
-ProgrammaAsciugatrice programma1 = new ProgrammaLavatrice();
-
+public class ProgrammaAsciugatrice : Programma
+{
+    public ProgrammaAsciugatrice(string nome, int durata, int costo)
+    {
+        Nome = nome;
+        Durata = durata;
+        Costo = costo;
+    }
+}

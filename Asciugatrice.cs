@@ -20,18 +20,22 @@
 //Lavanderia
 //Lavatrici
 //Asciugatrici
-//Macchine          Stato
-//Programmi         Gettoni | Durata 
-// Rinfrescante     ConsumoDetersivo | ConsumoAmmorbidente
-// Rinnovante       ConsumoDetersivo | ConsumoAmmorbidente
-// Sgrassante       ConsumoDetersivo | ConsumoAmmorbidente
-// Rapido           
-// Intenso
-
-Console.WriteLine("Benvenuto nella lavanderia");
+//Macchine
+//Programmi
 
 
-Lavatrice lavatrice1 = new Lavatrice("Samsung");
+public class Asciugatrice : Macchina
+{
+    public Programma ProgrammaCorrente { get; set; }
+    public List<ProgrammaAsciugatrice> Programmi { get; set; }
 
-ProgrammaAsciugatrice programma1 = new ProgrammaLavatrice();
+    public Asciugatrice(string marchio)
+    {
+        Marchio = marchio;
+        Programmi = new List<ProgrammaAsciugatrice>();
+        Programmi.Add(new ProgrammaAsciugatrice("Rapido", 30, 2));
+        Programmi.Add(new ProgrammaAsciugatrice("Intenso", 60, 4));
+    }
+}
+
 
