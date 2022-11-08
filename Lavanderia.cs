@@ -27,7 +27,6 @@
 
 public class Lavanderia
 {
-    public double Incasso { get; private set; }
     public List<Macchina> Lista { get; set; }
 
     public Lavanderia()
@@ -67,11 +66,12 @@ public class Lavanderia
 
     public double TotaleIncasso()
     {
+        double incasso = 0;
         foreach (Macchina macchina in Lista)
         {
-            Incasso += macchina.IncassoMacchina();
+            incasso = incasso + macchina.IncassoMacchina();
         }
-        return Incasso;
+        return incasso;
     }
 
 }
