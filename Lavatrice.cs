@@ -54,7 +54,7 @@ public class Lavatrice : Macchina
         ProgrammaCorrente = Programmi[SceltaProgramma(0, Programmi.Count)];
         Stato = true;
         RaccoglitoreGettoni += ProgrammaCorrente.Costo;
-        
+        SerbatoioDetersivo -= ProgrammaCorrente.
     }
 
 

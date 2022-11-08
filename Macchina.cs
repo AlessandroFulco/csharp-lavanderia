@@ -35,6 +35,8 @@ public abstract class Macchina
     public int TempoRestante { get; set; }
     public Programma ProgrammaCorrente { get; set; }
 
+    
+
     public int SceltaProgramma(int min, int max)
     {
         Random random = new Random();
