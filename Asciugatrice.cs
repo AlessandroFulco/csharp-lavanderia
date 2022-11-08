@@ -47,6 +47,7 @@ public class Asciugatrice : Macchina
         ProgrammaCorrente = Programmi[SceltaProgramma(0, Programmi.Count)];
         Stato = true;
         RaccoglitoreGettoni += ProgrammaCorrente.Costo;
+        TempoRestante = CalcoloTempoRestante();
     }
 
     public override string ToString()

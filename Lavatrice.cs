@@ -57,6 +57,7 @@ public class Lavatrice : Macchina
         RaccoglitoreGettoni += ProgrammaCorrente.Costo;
         SerbatoioDetersivo -= Programmi[sceltaRandom].ConsumoDetersivo;
         SerbatoioAmmorbidente -= Programmi[sceltaRandom].ConsumoAmmorbidente;
+        TempoRestante = CalcoloTempoRestante();
     }
 
 

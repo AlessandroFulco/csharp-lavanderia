@@ -41,6 +41,7 @@ while (on)
     Console.WriteLine("1. Stato Macchine");
     Console.WriteLine("2. Stato di una macchina");
     Console.WriteLine("3. Totale incasso macchine");
+    Console.WriteLine("4. Esci dall'applicazione");
     Console.WriteLine();
 
     int scelta = Convert.ToInt32(Console.ReadLine());
@@ -74,6 +75,15 @@ while (on)
         case 4:
             //esci dall'applicazione
             on = false;
+            break;
+
+        case 5:
+            Console.WriteLine("Sezione Stampa Tutte le macchine");
+            List<Macchina> stampaLista = lavanderia1.StampaMacchine();
+            foreach (Macchina macchina in stampaLista)
+            {
+                Console.WriteLine(macchina.ToString());
+            }
             break;
 
         default:

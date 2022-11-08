@@ -52,7 +52,7 @@ public abstract class Macchina
             StampaStato = "Ferma";
         else
             StampaStato = "In esecuzione";
-        TempoRestante = CalcoloTempoRestante();
+        
         string stato = macchina.ToString();
 
         return stato;

@@ -64,6 +64,11 @@ public class Lavanderia
         return statoMacchina;
     }
 
+    public List<Macchina> StampaMacchine()
+    {
+        return Lista;
+    }
+
     public double TotaleIncasso()
     {
         double incasso = 0;
