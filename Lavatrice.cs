@@ -51,9 +51,12 @@ public class Lavatrice : Macchina
     public void Avvio()
     {
         Random random = new Random();
-        ProgrammaCorrente = Programmi[SceltaProgramma(0, Programmi.Count)];
+        int sceltaRandom = SceltaProgramma(0, Programmi.Count);
+        ProgrammaCorrente = Programmi[sceltaRandom];
         Stato = true;
         RaccoglitoreGettoni += ProgrammaCorrente.Costo;
+        SerbatoioDetersivo -= Programmi[sceltaRandom].ConsumoDetersivo;
+        SerbatoioAmmorbidente -= Programmi[sceltaRandom].ConsumoAmmorbidente;
     }
 
 

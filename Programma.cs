@@ -31,7 +31,7 @@
 
 
 
-public abstract class Programma
+public abstract class Programma 
 {
     public string Nome { get; set; }
     public int Costo { get; set; }
