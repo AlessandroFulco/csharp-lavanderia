@@ -45,11 +45,27 @@ public abstract class Macchina
 
     public string StatoMacchina(Macchina macchina)
     {
-        
+        if (Stato == false)
+            StampaStato = "Ferma";
+        else
+            StampaStato = "In esecuzione";
         string stato = macchina.ToString();
 
         return stato;
     }
+    public string StatoMacchinaInFunzione()
+    {
+
+        if (Stato == false)
+            StampaStato = "Ferma";
+        else
+            StampaStato = "In esecuzione";
+
+        string stampa = "Stato macchina: " + StampaStato;
+
+        return stampa;
+    }
+    
 
     public int CalcoloTempoRestante()
     {

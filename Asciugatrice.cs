@@ -39,6 +39,7 @@ public class Asciugatrice : Macchina
 
         Random random = new Random();
         ProgrammaCorrente = Programmi[SceltaProgramma(0, Programmi.Count)];
+
     }
 
     public override string ToString()

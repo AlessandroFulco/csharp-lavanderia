@@ -44,11 +44,18 @@ public class Lavatrice : Macchina
         Programmi.Add(new ProgrammaLavatrice("Rinnovante", 40, 3, 40, 10));
         Programmi.Add(new ProgrammaLavatrice("Rinfrescante", 60, 4, 60, 15));
 
-        Random random = new Random();
-        ProgrammaCorrente = Programmi[SceltaProgramma(0, Programmi.Count)];
+        Avvio();
         
     }
 
+    public void Avvio()
+    {
+        Random random = new Random();
+        ProgrammaCorrente = Programmi[SceltaProgramma(0, Programmi.Count)];
+        Stato = true;
+        RaccoglitoreGettoni += ProgrammaCorrente.Costo;
+        
+    }
 
 
 

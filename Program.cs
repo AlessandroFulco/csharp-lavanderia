@@ -35,17 +35,20 @@ Lavanderia lavanderia1 = new Lavanderia();
 
 
 
-////STATO MACCHINE, RICHIESTA 1
-//List<Macchina> lista = lavanderia1.StatoMacchine();
+//STATO MACCHINE, RICHIESTA 1
+List<Macchina> lista = lavanderia1.Lista;
 
-//foreach (Macchina macchina in lista)
-//{
-//    Console.WriteLine(macchina.ToString());
-//}
+foreach(Macchina macchina in lista)
+{
+    Console.WriteLine(macchina.StatoMacchinaInFunzione());
+}
 
 
-////STATO SINGOLA MACCHINA, RICHIESTA 2
-//Console.WriteLine(lavanderia1.StatoMacchina(1));
+
+//STATO SINGOLA MACCHINA, RICHIESTA 2
+Console.WriteLine(lavanderia1.StatoMacchina(1));
+
+
 
 
 public class Lavanderia
