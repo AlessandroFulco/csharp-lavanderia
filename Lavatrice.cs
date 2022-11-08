@@ -31,15 +31,15 @@ public class Lavatrice : Macchina
     public int SerbatoioDetersivo { get; set; }
     public int SerbatoioAmmorbidente { get; set; }
     public Programma ProgrammaCorrente { get; set; }
-    public List<ProgrammaAsciugatrice> Programmi { get; set; }
+    public List<ProgrammaLavatrice> Programmi { get; set; }
 
     public Lavatrice(string marchio)
     {
         Marchio = marchio;
-        Programmi = new List<ProgrammaAsciugatrice>();
-        Programmi.Add(new ProgrammaAsciugatrice("Rinfrescante", 20, 2, 20, 5));
-        Programmi.Add(new ProgrammaAsciugatrice("Rinnvante", 40, 3, 40, 10));
-        Programmi.Add(new ProgrammaAsciugatrice("Rinfrescante", 60, 4, 60, 15));
+        Programmi = new List<ProgrammaLavatrice>();
+        Programmi.Add(new ProgrammaLavatrice("Rinfrescante", 20, 2, 20, 5));
+        Programmi.Add(new ProgrammaLavatrice("Rinnvante", 40, 3, 40, 10));
+        Programmi.Add(new ProgrammaLavatrice("Rinfrescante", 60, 4, 60, 15));
     }
 
 

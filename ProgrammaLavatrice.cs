@@ -33,12 +33,12 @@
 
 
 
-public class ProgrammaAsciugatrice : Programma
+public class ProgrammaLavatrice : Programma
 {
     public int ConsumoDetersivo { get; set; }
     public int ConsumoAmmorbidente { get; set; }
 
-    public ProgrammaAsciugatrice(string nome, int durata, int costo, int consumoDetersivo, int consumoAmmorbidente)
+    public ProgrammaLavatrice(string nome, int durata, int costo, int consumoDetersivo, int consumoAmmorbidente)
     {
         Nome = nome;
         Durata = durata;
