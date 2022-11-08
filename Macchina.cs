@@ -1,4 +1,5 @@
-﻿/*
+﻿
+/*
  * Una lavanderia è aperta 24 ore su 24 e permette ai clienti di servirsi autonomamente di 5 Lavatrici e 5 Asciugatrici.
     I clienti che usufruiscono delle macchine, possono effettuare diversi programmi di lavaggio e asciugatura 
     ognuno con un costo diverso (in gettoni) e di una specifica durata. Ogni gettone costa 0.50 centesimi di euro e ogni lavaggio 

@@ -1,4 +1,5 @@
-﻿/*
+﻿
+/*
  * Una lavanderia è aperta 24 ore su 24 e permette ai clienti di servirsi autonomamente di 5 Lavatrici e 5 Asciugatrici.
     I clienti che usufruiscono delle macchine, possono effettuare diversi programmi di lavaggio e asciugatura 
     ognuno con un costo diverso (in gettoni) e di una specifica durata. Ogni gettone costa 0.50 centesimi di euro e ogni lavaggio 
@@ -20,16 +21,28 @@
 //Lavanderia
 //Lavatrici
 //Asciugatrici
-//Macchine          Stato
-//Programmi         Gettoni | Durata 
-// Rinfrescante     ConsumoDetersivo | ConsumoAmmorbidente
-// Rinnovante       ConsumoDetersivo | ConsumoAmmorbidente
-// Sgrassante       ConsumoDetersivo | ConsumoAmmorbidente
-// Rapido           
-// Intenso
-
-Console.WriteLine("Benvenuto nella lavanderia");
+//Macchine
+//Programmi
 
 
+public class Lavanderia
+{
+    public List<Macchina> Lista { get; set; }
+
+    public Lavanderia()
+    {
+        Lista = new List<Macchina>();
+        Lista.Add(new Lavatrice("Samsung"));
+        Lista.Add(new Lavatrice("Indesit"));
+        Lista.Add(new Lavatrice("Bosh"));
+        Lista.Add(new Lavatrice("Beko"));
+        Lista.Add(new Lavatrice("Lg"));
+        Lista.Add(new Asciugatrice("Lg"));
+        Lista.Add(new Asciugatrice("Solarex"));
+        Lista.Add(new Asciugatrice("Bosch"));
+        Lista.Add(new Asciugatrice("Siemens"));
+        Lista.Add(new Asciugatrice("Electrolux"));
+    }
+}
 
 
