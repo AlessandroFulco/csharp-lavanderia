@@ -28,6 +28,8 @@
 // Rapido           
 // Intenso
 
+using System.Diagnostics;
+
 Lavanderia lavanderia1 = new Lavanderia();
 Console.WriteLine("Benvenuto nella lavanderia");
 
@@ -37,9 +39,49 @@ while (on)
 {
     Console.WriteLine("Menu:");
     Console.WriteLine("1. Stato Macchine");
-    Console.WriteLine("2. Stato di una macchina, scegli un numero [1 - 5] per le lavatrici, [6 - 10] per le asciugatrici");
+    Console.WriteLine("2. Stato di una macchina");
     Console.WriteLine("3. Totale incasso macchine");
+    Console.WriteLine();
 
+    int scelta = Convert.ToInt32(Console.ReadLine());
+
+    switch (scelta)
+    {
+        //Stato Macchine
+        case 1:
+            List<Macchina> lista = lavanderia1.Lista;
+
+            foreach (Macchina macchina in lista)
+            {
+                Console.WriteLine(macchina.StatoMacchinaInFunzione());
+            }
+            break;
+
+        case 2:
+            //Stato singola machina
+            Console.WriteLine("Controllo Stato Macchina");
+            Console.WriteLine("Inserisci il numero della macchina [1 - 5] per le lavatrici, [6 - 10] per le asciugatrici");
+            int inputUtente = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(lavanderia1.StatoMacchina(inputUtente));
+            break;
+
+        case 3:
+            //Stampa totale incasso lavanderia
+            Console.WriteLine("Sezione Incasso Lavanderia");
+            Console.WriteLine("Totale incassi: " + lavanderia1.TotaleIncasso() + " euro");
+            break;
+
+        case 4:
+            //esci dall'applicazione
+            on = false;
+            break;
+
+        default:
+            Console.WriteLine("Opzione non esistente");
+            break;
+
+
+    }
 
 
 
@@ -52,20 +94,15 @@ while (on)
 
 
 
-//STATO MACCHINE, RICHIESTA 1
-List<Macchina> lista = lavanderia1.Lista;
-
-foreach(Macchina macchina in lista)
-{
-    Console.WriteLine(macchina.StatoMacchinaInFunzione());
-}
+////STATO MACCHINE, RICHIESTA 1
 
 
 
-//STATO SINGOLA MACCHINA, RICHIESTA 2
-Console.WriteLine(lavanderia1.StatoMacchina(1));
 
-//TOTALE INCASSO, RICHIESTA 3
-Console.WriteLine(lavanderia1.TotaleIncasso() + " euro");
+////STATO SINGOLA MACCHINA, RICHIESTA 2
+//Console.WriteLine(lavanderia1.StatoMacchina(1));
+
+////TOTALE INCASSO, RICHIESTA 3
+//Console.WriteLine(lavanderia1.TotaleIncasso() + " euro");
 
 
