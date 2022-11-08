@@ -37,9 +37,16 @@ public class Asciugatrice : Macchina
         Programmi.Add(new ProgrammaAsciugatrice("Rapido", 30, 2));
         Programmi.Add(new ProgrammaAsciugatrice("Intenso", 60, 4));
 
+        Avvio();
+
+    }
+
+    public void Avvio()
+    {
         Random random = new Random();
         ProgrammaCorrente = Programmi[SceltaProgramma(0, Programmi.Count)];
-
+        Stato = true;
+        RaccoglitoreGettoni += ProgrammaCorrente.Costo;
     }
 
     public override string ToString()

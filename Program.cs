@@ -28,10 +28,27 @@
 // Rapido           
 // Intenso
 
+Lavanderia lavanderia1 = new Lavanderia();
 Console.WriteLine("Benvenuto nella lavanderia");
 
+bool on = true;
 
-Lavanderia lavanderia1 = new Lavanderia();
+while (on)
+{
+    Console.WriteLine("Menu:");
+    Console.WriteLine("1. Stato Macchine");
+    Console.WriteLine("2. Stato di una macchina, scegli un numero [1 - 5] per le lavatrici, [6 - 10] per le asciugatrici");
+    Console.WriteLine("3. Totale incasso macchine");
+
+
+
+
+
+}
+
+
+
+
 
 
 
