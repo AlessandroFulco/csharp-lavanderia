@@ -50,7 +50,6 @@ public class Lavatrice : Macchina
 
     public void Avvio()
     {
-        Random random = new Random();
         int sceltaRandom = SceltaProgramma(0, Programmi.Count);
         ProgrammaCorrente = Programmi[sceltaRandom];
         Stato = true;
@@ -65,8 +64,8 @@ public class Lavatrice : Macchina
     public override string ToString()
     {
         return base.ToString() +
-                " Detersivo rimasto: " + SerbatoioDetersivo +
-                ", ammorbidente rimasto " + SerbatoioAmmorbidente;
+                "\tDetersivo rimasto:\t" + SerbatoioDetersivo + " ml" +
+                "\nAmmorbidente rimasto:\t" + SerbatoioAmmorbidente + " ml";
     }
 }
 

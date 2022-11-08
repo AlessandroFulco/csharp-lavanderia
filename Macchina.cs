@@ -93,11 +93,11 @@ public abstract class Macchina
         else
             StampaStato = "In esecuzione";
 
-        return  "Marchio: " + Marchio +
-                ", stato: " + StampaStato +
-                ", Gettoni incassati: " + RaccoglitoreGettoni + 
-                ", " + ProgrammaCorrente +
-                ", tempo restante: " + TempoRestante + " minuti";
+        return  "Marchio:\t\t" + Marchio +
+                "\t\tStato:\t\t\t" + StampaStato +
+                "\nGettoni incassati:\t" + RaccoglitoreGettoni +
+                "\t\tProgramma corrente:\t" + ProgrammaCorrente.Nome +
+                "\nTempo restante:\t\t" + TempoRestante + " minuti";
     }
 }
 

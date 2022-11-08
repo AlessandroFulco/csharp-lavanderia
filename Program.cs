@@ -54,16 +54,23 @@ while (on)
 
             foreach (Macchina macchina in lista)
             {
-                Console.WriteLine(macchina.StatoMacchinaInFunzione());
+                if (macchina.GetType().ToString() == "Lavatrice")
+                    Console.WriteLine( "Lavatrice: \t" + macchina.StatoMacchinaInFunzione());
+                else
+                    Console.WriteLine( "Asciugatrice: \t" + macchina.StatoMacchinaInFunzione());
+
             }
+            Console.WriteLine();
             break;
 
         case 2:
             //Stato singola machina
             Console.WriteLine("Controllo Stato Macchina");
-            Console.WriteLine("Inserisci il numero della macchina [1 - 5] per le lavatrici, [6 - 10] per le asciugatrici");
+            Console.Write("Inserisci il numero della macchina [1 - 5] per le lavatrici, [6 - 10] per le asciugatrici: ");
             int inputUtente = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine();
             Console.WriteLine(lavanderia1.StatoMacchina(inputUtente));
+            Console.WriteLine();
             break;
 
         case 3:
