@@ -75,8 +75,10 @@ while (on)
 
         case 3:
             //Stampa totale incasso lavanderia
+            Console.WriteLine();
             Console.WriteLine("Sezione Incasso Lavanderia");
             Console.WriteLine("Totale incassi: " + lavanderia1.TotaleIncasso() + " euro");
+            Console.WriteLine();
             break;
 
         case 4:

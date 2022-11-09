@@ -45,7 +45,13 @@ public class Asciugatrice : Macchina
     {
         Random random = new Random();
         ProgrammaCorrente = Programmi[SceltaProgramma(0, Programmi.Count)];
+
         Stato = true;
+        if (Stato == false)
+            StampaStato = "Ferma";
+        else
+            StampaStato = "In esecuzione";
+
         RaccoglitoreGettoni += ProgrammaCorrente.Costo;
         TempoRestante = CalcoloTempoRestante();
     }

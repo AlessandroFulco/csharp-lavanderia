@@ -52,7 +52,13 @@ public class Lavatrice : Macchina
     {
         int sceltaRandom = SceltaProgramma(0, Programmi.Count);
         ProgrammaCorrente = Programmi[sceltaRandom];
+
         Stato = true;
+        if (Stato == false)
+            StampaStato = "Ferma";
+        else
+            StampaStato = "In esecuzione";
+
         RaccoglitoreGettoni += ProgrammaCorrente.Costo;
         SerbatoioDetersivo -= Programmi[sceltaRandom].ConsumoDetersivo;
         SerbatoioAmmorbidente -= Programmi[sceltaRandom].ConsumoAmmorbidente;
